@@ -4,16 +4,22 @@ import Days from "./Days/Days";
 import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
 import "./App.css";
+import CssBaseline from "@material-ui/core/CssBaseline";
+// import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <h1> App </h1>
-      <Days />
-      <Months />
-      <Footer />
-    </div>
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="md">
+        <Header />
+        <h1> App </h1>
+        <Days />
+        <Months />
+        <Footer />
+      </Container>
+    </React.Fragment>
   );
 }
 
