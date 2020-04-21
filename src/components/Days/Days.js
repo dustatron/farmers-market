@@ -2,6 +2,8 @@ import React from "react";
 import Location from "./Locations";
 import Photo from "./Photo";
 import "./Days.css";
+// import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import marketSchedule from "../Data/MarketSchedule.js";
 
 class Days extends React.Component {
@@ -19,14 +21,18 @@ class Days extends React.Component {
       <React.Fragment>
         <div className="days-box">
           <div className="days-row">
-            <h4>Days</h4>
-            <p><button onClick={() => this.handleClick(1)}>Monday</button></p>
-            <p><button onClick={() => this.handleClick(2)}>Tuesday</button></p>
-            <p><button onClick={() => this.handleClick(3)}>Wednesday</button></p>
-            <p><button onClick={() => this.handleClick(4)}>Thursday</button></p>            
-            <p><button onClick={() => this.handleClick(5)}>Friday</button></p>
-            <p><button onClick={() => this.handleClick(6)}>Saturday</button></p>
-            <p><button onClick={() => this.handleClick(0)}>Sunday</button></p>
+            {/* <h4>Days</h4> */}
+            <p><Button variant="outlined" onClick={() => this.handleClick(0)}>Sunday</Button></p>
+            <p><Button variant="outlined" onClick={() => this.handleClick(1)}>Monday</Button></p>
+            <p><Button variant="outlined" onClick={() => this.handleClick(2)}>Tuesday</Button></p>
+            <p><Button variant="outlined" onClick={() => this.handleClick(3)}>Wednesday</Button></p>
+            <p><Button variant="outlined" onClick={() => this.handleClick(4)}>Thursday</Button></p>          
+            <p><Button variant="outlined" disabled>No Friday Locations</Button></p> 
+            <p><Button variant="outlined" onClick={() => this.handleClick(5)}>Saturday</Button></p>
+
+          </div>
+          <div className="days-row">
+            <Photo img={this.state.img}/>
           </div>
           <div className="days-row">
             <Location
@@ -35,9 +41,6 @@ class Days extends React.Component {
               location={this.state.location}
               booth={this.state.booth}
             />
-          </div>
-          <div className="days-row">
-            <Photo />
           </div>
         </div>
       </React.Fragment>

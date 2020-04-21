@@ -3,11 +3,16 @@ import React from "react";
 function Location(props) {
   return (
     <React.Fragment>
-      <h4>Location</h4>
-      <p>Day = {props.day}</p>
-      <p>Location = {props.location}</p>
-      <p>hours = {props.hours}</p>
-      <p>Booth = {props.booth}</p>
+      <h4> {props.day} </h4>
+      <hr/>
+      <strong>Location</strong>
+      <p>{props.location}</p>
+      <hr/>
+      <strong>Hours</strong>
+      <p>{props.hours}</p>
+      <hr/>
+      <strong>Booth</strong>
+      <p>{props.booth}</p>
     </React.Fragment>
   );
 }

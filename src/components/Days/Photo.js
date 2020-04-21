@@ -1,9 +1,11 @@
 import React from "react";
 
-function Photo() {
+function Photo(props) {
   return (
     <React.Fragment>
-      <p>Photo</p>
+      <div className="marcket-img-box">
+        <img className="marcket-img" src={require("../../img/" + props.img) } alt="location" />
+      </div>
     </React.Fragment>
   );
 }

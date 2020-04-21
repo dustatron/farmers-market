@@ -1,11 +1,15 @@
 .days-box {
   width: 100%;
-  height: 20rem;
+  height: 26rem;
   position: relative;
   display: flex;
   justify-content: center;
   padding: 10px;
-  border: 1px solid red;
+  border-radius: 5px;
+  margin-bottom: 5rem;
+  -webkit-box-shadow: 10px 10px 50px -6px rgba(0,0,0,0.33);
+  -moz-box-shadow: 10px 10px 50px -6px rgba(0,0,0,0.33);
+  box-shadow: 10px 10px 50px -6px rgba(0,0,0,0.33);
 }
 
 .days-row {
@@ -14,5 +18,15 @@
   width: 30%;
   height: 100%;
   display: inline-block;
-  background-color: rgb(201, 201, 201);
+  /* background-color: rgb(201, 201, 201); */
+}
+
+.marcket-img-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.marcket-img {
+  max-height: 100%;
 }

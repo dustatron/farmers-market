@@ -13,7 +13,7 @@ function App() {
       <CssBaseline />
       <Container maxWidth="md">
         <Header />
-        <h1> App </h1>
+        {/* <h1> App </h1> */}
         <Days />
         <Months />
         <Footer />
