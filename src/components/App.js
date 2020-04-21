@@ -5,7 +5,6 @@ import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
 import "./App.css";
 import CssBaseline from "@material-ui/core/CssBaseline";
-// import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
 function App() {

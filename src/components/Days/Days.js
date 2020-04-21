@@ -2,8 +2,21 @@ import React from "react";
 import Location from "./Locations";
 import Photo from "./Photo";
 import "./Days.css";
+import marketSchedule from "../Data/MarketSchedule.js";
 
 function Days() {
+  const getDetails = (dayString) => {
+    let result;
+
+    marketSchedule.forEach((obj) => {
+      if (dayString === obj.day) {
+        result = obj;
+      }
+    });
+    return result;
+  };
+
+  let data = getDetails("Tuesday");
   return (
     <React.Fragment>
       <div className="days-box">
@@ -17,7 +30,7 @@ function Days() {
           <p>Sunday</p>
         </div>
         <div className="days-row">
-          <Location />
+          <Location day={data.day} hours={data.hours} location={data.location} booth={data.booth} />
         </div>
         <div className="days-row">
           <Photo />
