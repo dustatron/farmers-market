@@ -9,39 +9,24 @@ class Days extends React.Component {
     super(props);
     this.state = marketSchedule[0];
   }
-  // const getDetails = (dayString) => {
-  //   let result;
 
-  //   marketSchedule.forEach((obj) => {
-  //     if (dayString === obj.day) {
-  //       result = obj;
-  //     }
-  //   });
-  //   return result;
-  // };
+  handleClick = (index) => {
+    this.setState(marketSchedule[index]);
+  };
 
-  // let data =   {
-  //   day: "Sunday",
-  //   location: "Lents International",
-  //   hours: "9:00am - 2:00pm",
-  //   booth: "4A"
-  // };
-  // const handleClick = (dayString) => {
-  //   const fromArray = getDetails(dayString);
-  //   let data = fromArray;
-  // };
   render() {
     return (
       <React.Fragment>
         <div className="days-box">
           <div className="days-row">
             <h4>Days</h4>
-            <p>{/* <button onClick={handleClick("Monday")}>Monday</button> */}</p>
-            <p>Tuesday</p>
-            <p>Thursday</p>
-            <p>Friday</p>
-            <p>Saturday</p>
-            <p>Sunday</p>
+            <p><button onClick={() => this.handleClick(1)}>Monday</button></p>
+            <p><button onClick={() => this.handleClick(2)}>Tuesday</button></p>
+            <p><button onClick={() => this.handleClick(3)}>Wednesday</button></p>
+            <p><button onClick={() => this.handleClick(4)}>Thursday</button></p>            
+            <p><button onClick={() => this.handleClick(5)}>Friday</button></p>
+            <p><button onClick={() => this.handleClick(6)}>Saturday</button></p>
+            <p><button onClick={() => this.handleClick(0)}>Sunday</button></p>
           </div>
           <div className="days-row">
             <Location
