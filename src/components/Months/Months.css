@@ -20,19 +20,22 @@
 
 .months-box--produce {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-content: flex-start;
   padding: 50px;
   flex-wrap: wrap;
 }
 
 .produce-box {
+  border: 1px solid grey;
   margin: 10px;
   text-align: center;
-  width: 20%;
+  min-width: 18%;
+  min-height: 255px;
   padding: 10px;
   font-weight: 500;
+  font-size: medium;
   border-radius: 7px;
-  background-color: rgb(211, 211, 211);
+  background-color: rgba(211, 211, 211, 0.406);
 
 }

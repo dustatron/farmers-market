@@ -2,9 +2,9 @@ import React from "react";
 import Produce from "./Produce";
 import seasonalProducts from "../Data/SeasonalProduce.js";
 
-// Material-ui imports
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+
 
 
 class Months extends React.Component {
@@ -17,13 +17,21 @@ class Months extends React.Component {
     this.setState(seasonalProducts[index]);
   };
   
+  handleAlignment = (event, newAlignment) => {
+    // if (newAlignment !== null) {
+    //   setAlignment(newAlignment);
+    // }
+    console.log(event.target);
+  };
+
+
   render(){
     return(
       <React.Fragment>
         <div className="months-box">
           <div className="months-box--menu">
             <ButtonGroup color="primary" aria-label="outlined primary button group">
-              <Button onClick={() => this.handleClick(0)}>January</Button>
+              <Button  className="active" onClick={() => this.handleClick(0)}>January</Button>
               <Button onClick={() => this.handleClick(1)}>February</Button>
               <Button onClick={() => this.handleClick(2)}>March</Button>
               <Button onClick={() => this.handleClick(3)}>April</Button>
@@ -37,7 +45,6 @@ class Months extends React.Component {
               <Button onClick={() => this.handleClick(11)}>December</Button>
             </ButtonGroup>
           </div>
-        
 
           <div className="months-box--produce">
             {this.state.selection.map((product) => 
@@ -45,7 +52,6 @@ class Months extends React.Component {
             )}
           </div>
         </div>
-
 
       </React.Fragment>
     )
