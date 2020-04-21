@@ -1,0 +1,38 @@
+.months-box {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 5px;
+  height: auto;
+  margin-bottom: 100px;
+  -webkit-box-shadow: 10px 10px 50px -6px rgba(0,0,0,0.33);
+  -moz-box-shadow: 10px 10px 50px -6px rgba(0,0,0,0.33);
+  box-shadow: 10px 10px 50px -6px rgba(0,0,0,0.33);
+
+}
+
+.months-box--menu {
+  display: flex;
+  justify-content: center;
+   align-items: flex-start;
+}
+
+.months-box--produce {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  padding: 50px;
+  flex-wrap: wrap;
+}
+
+.produce-box {
+  margin: 10px;
+  text-align: center;
+  width: 20%;
+  padding: 10px;
+  font-weight: 500;
+  border-radius: 7px;
+  background-color: rgb(211, 211, 211);
+
+}

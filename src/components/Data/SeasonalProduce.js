@@ -238,5 +238,13 @@ const availableProduce = [
       "Potatoes",
       "Turnips"
     ]
+  },
+  {
+    month: "null",
+    selection: [
+      
+    ]
   }
 ];
+
+export default availableProduce;
