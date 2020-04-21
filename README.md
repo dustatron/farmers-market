@@ -6,13 +6,14 @@
 This is a simple react applicaiton that was will take data and show it to the user. 
 
 ## Specs
-
+<details>
+  <summary>Expand specs for this project</summary>
 * User can select a month
   * app show which products are available.
 
 * User can select a day
     * app will show which market product is being sold at. 
-    
+</details>   
 ## Component diagram 
 
 ![Component Map](src/img/mockup.jpg)
