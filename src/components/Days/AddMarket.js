@@ -12,6 +12,7 @@ function AddMarket(props) {
       day: event.target.day.value,
       location: event.target.location.value,
       booth: event.target.booth.value,
+      hours: event.target.hours.value,
       img: event.target.img.value,
       id: v4()
     });

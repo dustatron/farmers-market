@@ -14,13 +14,16 @@ class Days extends React.Component {
     this.state = { selectedMarket: 1 };
   }
 
-  handleClick = (index) => {
-    this.setState({ selectedMarket: index });
+  handleClick = (id) => {
+    this.setState({ selectedMarket: id });
   };
 
   handleSubmitDayForm = (newMarket) => {
     const { dispatch } = this.props;
-    const { day, location, hours, booth, img, id } = newMarket;
+    let { day, location, hours, booth, img, id } = newMarket;
+    if (!img) {
+      img = "no-img.jpg";
+    }
 
     const action = {
       type: "ADD_MARKET",
@@ -40,11 +43,20 @@ class Days extends React.Component {
       <React.Fragment>
         <div className="days-box">
           <div className="days-row">
-            {/* <h4>Days</h4> */}
-            <p>
-              <Button variant="outlined" onClick={() => this.handleClick(1)}>
-                Sunday
-              </Button>
+            <h2>Days</h2>
+
+            {Object.values(this.props.marketSchedule).map((thisDay) => {
+              return (
+                <div>
+                  <Button variant="outlined" onClick={() => this.handleClick(thisDay.id)}>
+                    {thisDay.day}
+                  </Button>
+                </div>
+              );
+            })}
+
+            {/* <p>
+
             </p>
             <p>
               <Button variant="outlined" onClick={() => this.handleClick(2)}>
@@ -75,7 +87,7 @@ class Days extends React.Component {
               <Button variant="outlined" onClick={() => this.handleClick(6)}>
                 Saturday
               </Button>
-            </p>
+            </p> */}
           </div>
           <div className="days-row">
             <Photo img={this.props.marketSchedule[this.state.selectedMarket].img} />
