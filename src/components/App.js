@@ -16,8 +16,8 @@ function App() {
         {/* <h1> App </h1> */}
         <Days />
       </Container>
-        <Months />
-        <Footer />
+      <Months />
+      <Footer />
     </React.Fragment>
   );
 }

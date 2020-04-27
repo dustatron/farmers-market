@@ -6,7 +6,12 @@ import * as serviceWorker from "./serviceWorker";
 import { createStore } from "redux";
 import reducer from "./reducers/farmers-market-reducer";
 import { Provider } from "react-redux";
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+import marketSchedule from "./components/Data/MarketSchedule";
+const store = createStore(
+  reducer,
+  marketSchedule,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <Provider store={store}>
