@@ -1,15 +1,7 @@
-{
-  "coauthors": {
-    "dm": {
-      "name": "dusty mccord",
-      "email": "dustymccord@gmail.com"
-    },
-    "zs": {
-      "name": "Zakkrey Short",
-      "email": "zakkreyjshort@gmail.com"
-    }
-  }
-}
+
 
 co-authored-by: dusty mccord <dustymccord@gmail.com>
-Co-authored-by: Zakkrey Short <zakkreyjshort@gmail.com>"
+co-authored-by: Zakkrey Short <zakkreyjshort@gmail.com>"
+
+
+co-authored-by: Patrick Kille <59419677+PRKille@users.noreply.github.com>
