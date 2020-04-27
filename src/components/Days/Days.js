@@ -22,7 +22,7 @@ class Days extends React.Component {
     const { dispatch } = this.props;
     let { day, location, hours, booth, img, id } = newMarket;
     if (!img) {
-      img = "no-img.jpg";
+      img = "https://image.shutterstock.com/image-vector/no-image-available-sign-absence-260nw-373243873.jpg";
     }
 
     const action = {
@@ -38,7 +38,52 @@ class Days extends React.Component {
     dispatch(action);
   };
 
+  handleDayDeletion = (id) => {
+    const { dispatch } = this.props;
+    const action = {
+      type: "DELETE_MARKET",
+      id: id
+    };
+    dispatch(action);
+    this.setState({ selectedMarket: null });
+  };
+
+  //obj[Object.keys(obj)[0]]; //returns 'someVal'
+
   render() {
+    let renderImg;
+    let renderLocaiton;
+
+    if (this.state.selectedMarket) {
+      renderImg = <Photo img={this.props.marketSchedule[this.state.selectedMarket].img} />;
+      renderLocaiton = (
+        <Location
+          day={this.props.marketSchedule[this.state.selectedMarket].day}
+          hours={this.props.marketSchedule[this.state.selectedMarket].hours}
+          location={this.props.marketSchedule[this.state.selectedMarket].location}
+          booth={this.props.marketSchedule[this.state.selectedMarket].booth}
+          id={this.state.selectedMarket}
+          onDayDelete={this.handleDayDeletion}
+        />
+      );
+    } else {
+      renderImg = (
+        <Photo
+          img={"https://image.shutterstock.com/image-vector/no-image-available-sign-absence-260nw-373243873.jpg"}
+        />
+      );
+      renderLocaiton = (
+        <Location
+          day={"No Day Selected"}
+          hours={"Please select a day"}
+          location={""}
+          booth={""}
+          id={""}
+          onDayDelete={null}
+        />
+      );
+    }
+
     return (
       <React.Fragment>
         <div className="days-box">
@@ -54,52 +99,9 @@ class Days extends React.Component {
                 </div>
               );
             })}
-
-            {/* <p>
-
-            </p>
-            <p>
-              <Button variant="outlined" onClick={() => this.handleClick(2)}>
-                Monday
-              </Button>
-            </p>
-            <p>
-              <Button variant="outlined" onClick={() => this.handleClick(3)}>
-                Tuesday
-              </Button>
-            </p>
-            <p>
-              <Button variant="outlined" onClick={() => this.handleClick(4)}>
-                Wednesday
-              </Button>
-            </p>
-            <p>
-              <Button variant="outlined" onClick={() => this.handleClick(5)}>
-                Thursday
-              </Button>
-            </p>
-            <p>
-              <Button variant="outlined" disabled>
-                No Friday Locations
-              </Button>
-            </p>
-            <p>
-              <Button variant="outlined" onClick={() => this.handleClick(6)}>
-                Saturday
-              </Button>
-            </p> */}
           </div>
-          <div className="days-row">
-            <Photo img={this.props.marketSchedule[this.state.selectedMarket].img} />
-          </div>
-          <div className="days-row">
-            <Location
-              day={this.props.marketSchedule[this.state.selectedMarket].day}
-              hours={this.props.marketSchedule[this.state.selectedMarket].hours}
-              location={this.props.marketSchedule[this.state.selectedMarket].location}
-              booth={this.props.marketSchedule[this.state.selectedMarket].booth}
-            />
-          </div>
+          <div className="days-row">{renderImg}</div>
+          <div className="days-row">{renderLocaiton}</div>
         </div>
 
         <AddMarket onSubmitDayForm={this.handleSubmitDayForm} />
